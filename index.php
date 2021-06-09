@@ -22,8 +22,8 @@ for($i=0;$i<count($array);$i++){
 echo $array[$index]."<br>".$index."番目"."<br>";
 
 //二分探索
-$array2=[1,2,3,4,5,6,7,8,9,10,11,12,13,14];
-
+$array2=[1,2,15,3,17,4,16,5,18,19,6,7,20,8,9,10,11,12,13,14];
+$array2=bubble_sort($array2);
 $search_value2=9;
 
 $index2=-1;
@@ -47,5 +47,24 @@ while($left<=$right){
 }
 
 echo $array2[$index2]."<br>".$index2."番目"."<br>";
+
+
+//バブルソート
+// $array3=[2,3,1,5,63,7,9,10,15,11,12,13,14,19,17,18,22,21,20];
+
+function bubble_sort($array3){
+  for($i=0;$i<count($array3);$i++){
+    for($j=1;$j<count($array3);$j++){
+      if($array3[$j]<$array3[$j-1]){
+        $tmp=$array3[$j-1];
+        $array3[$j-1]=$array3[$j];
+        $array3[$j]=$tmp;
+      }
+
+    }
+  }
+  print_r($array3);
+  return $array3;
+}
 
 ?>
